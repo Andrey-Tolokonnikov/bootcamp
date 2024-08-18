@@ -1,16 +1,17 @@
-import Header from "@/components/shared/Header"
+import Header from "@/components/widgets/Header/Header"
 import "./App.css"
-import Container from "@/components/shared/Container"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import ProductsPage from "./components/pages/ProductsPage/ProductsPage"
 
 function App() {
   return (
-    <>
-      <Header>
-      </Header>
-      <Container>
-      hello world
-      </Container>
-    </>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" Component={ProductsPage}/>
+        <Route path="/world"/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
