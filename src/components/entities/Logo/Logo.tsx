@@ -7,7 +7,7 @@ const Logo = () => {
             Дебют
         </div>
       </div>
-      <h1 className="w-full text-center text-xl text-slate-600">
+      <h1 className="w-full text-center text-xl text-slate-600 dark:text-slate-400">
         Продуктовый каталог
       </h1>
     </div>

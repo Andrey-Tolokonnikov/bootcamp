@@ -14,7 +14,7 @@ const ProductsPage = () => {
 
   return (
     <>
-      <Container className="sticky top-0 flex justify-between items-center flex-wrap gap-5 bg-white/90 py-4 px-2 rounded-md max-w-[1000px]">
+      <Container className="sticky top-0 flex justify-between items-center flex-wrap gap-5 bg-white/90 py-4 px-2 rounded-md max-w-[1000px] dark:bg-[#222222]">
         <Categories categories={categories}/>
         <div className="flex items-center ">
           <Switch id="archieveSwitch"/>

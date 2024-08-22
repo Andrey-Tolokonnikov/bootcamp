@@ -14,7 +14,7 @@ const Product = (props: Props) => {
           <p className="text-xl font-bold">{props.product.title}</p>
         </Link>
         <a href={props.product.link} target="_blank" className="text-sm text-primary mb-1">{props.product.link}</a>
-        <p className="text-sm text-gray-600 text-ellipsis line-clamp-2">{props.product.description}</p>
+        <p className="text-sm text-gray-600 text-ellipsis line-clamp-2 dark:text-slate-400">{props.product.description}</p>
       </div>
       
       

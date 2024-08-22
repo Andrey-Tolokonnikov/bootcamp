@@ -10,16 +10,16 @@ type Props = {
 
 const Alert = (props: Props) => {
   return (
-    <AlertDialog>
+    <AlertDialog >
       <AlertDialogTrigger asChild>{props.triggerButton}</AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="dark:text-slate-200">
         <AlertDialogHeader>
           <AlertDialogTitle>{props.title}</AlertDialogTitle>
           <AlertDialogDescription>
             {props.text}
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter>
+        <AlertDialogFooter >
           <AlertDialogCancel>Отмена</AlertDialogCancel>
           <AlertDialogAction onClick={props.onOk}>{props.okText}</AlertDialogAction>
         </AlertDialogFooter>

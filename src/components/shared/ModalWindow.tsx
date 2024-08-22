@@ -22,7 +22,7 @@ const ModalWindow = (props: Props) =>{
       <DialogTrigger asChild>
         {props.triggerButton}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md dark:text-slate-200">
         <DialogHeader>
           <DialogTitle>{props.title}</DialogTitle>
           <DialogDescription>

@@ -25,8 +25,8 @@ const ProductInfo = (props: Props) => {
         </Popover>
       </div>
       <p><a href={props.product.link} className="text-primary flex items-center gap-1"><Link/>{props.product.link}</a></p>
-      <p className="text-slate-700 flex items-center gap-1"><User className="inline"/>{props.product.owner}</p>
-      <p className="flex items-center gap-1"><Milestone />{props.product.contact}</p>
+      <p className="text-slate-700 dark:text-slate-200 flex items-center gap-1"><User className="inline"/>{props.product.owner}</p>
+      <a href= {`mailto: ${props.product.contact}`} className="flex items-center gap-1"><Milestone />{props.product.contact}</a>
       <Accordion type="single" className="w-[80%]" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Описание</AccordionTrigger>
