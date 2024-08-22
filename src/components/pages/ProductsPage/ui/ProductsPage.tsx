@@ -4,13 +4,24 @@ import Container from "@/components/shared/Container"
 import { Switch } from "@/components/ui/switch"
 import ProductsGroupsWrapper from "@/components/widgets/ProductsGroupsWrapper/ProductsGroupsWrapper"
 import { groupCategories } from "@/lib/utils"
-import useProducts from "@/store/ProductsSlice"
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
+import useProductsState from "@/store/ProductsSlice"
+import { useToast } from "@/components/ui/use-toast"
+import { fetchCategories, fetchProducts } from "../lib/API"
+
 
 const ProductsPage = () => {
-  const {products, categories} = useProducts()
+  const productsState = useProductsState()
+  const {products, categories, setProducts, setCategories} = productsState
 
   const groupedProducts: GroupedProducts[] = useMemo(()=>groupCategories(products, categories), [products, categories])
+
+  const {toast} = useToast()
+  useEffect(()=>{
+    fetchProducts(setProducts, toast)
+    fetchCategories(setCategories, toast)
+  },
+  [setCategories, setProducts, toast])
 
   return (
     <>

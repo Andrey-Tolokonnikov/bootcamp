@@ -8,7 +8,7 @@ type Props = {
     categories: Category[]
 }
 
-const scrollToCategory = (id: number) => {
+const scrollToCategory = (id: string) => {
   const element = document.getElementById(`category-${id}`)
   if (element) {
     element.scrollIntoView({

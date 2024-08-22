@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
 import ProductForm from "@/components/widgets/ProductForm/ProductForm"
 import { ArrowRight, Plus } from "lucide-react"
+import { addProduct } from "../lib/API"
+
 
 const AddProduct = () => {
   const {toast} = useToast()
@@ -11,7 +13,8 @@ const AddProduct = () => {
     <ModalWindow 
       title="Добавление продукта"
       description="Здесь можно ввести данные нового продукта и отправить их на проверку"
-      content={<ProductForm onSubmit={()=>{
+      content={<ProductForm onSubmit={(values)=>{
+        addProduct(values, toast)
         toast({
           title: "Продукт успешно отправлен",
           description: "После проверки модератором он будет добавлен в каталог."

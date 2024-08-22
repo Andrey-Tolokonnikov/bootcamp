@@ -2,7 +2,7 @@ import Container from "../../shared/Container"
 import Logo from "@/components/entities/Logo/Logo"
 import Search from "../../features/Search/Search"
 import { Link } from "react-router-dom"
-import AddProduct from "@/components/features/AddProduct/AddProduct"
+import AddProduct from "@/components/features/AddProduct/ui/AddProduct"
 import { ModeToggle } from "@/components/features/ToggleTheme/ToggleTheme"
 
 const Header = () => {

@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import { ProductFormType } from "@/components/entities/Product/model/Product"
+import { ProductType } from "@/components/entities/Product"
 import { Button } from "@/components/ui/button"
 import { DialogClose, DialogFooter } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
@@ -8,13 +8,13 @@ import useProducts from "@/store/ProductsSlice"
 import { Formik} from "formik"
 
 type Props = {
-    onSubmit: (values: ProductFormType) => void,
+    onSubmit: (values: ProductType) => void,
     onCancel?: ()=>void,
-    initialValues?: ProductFormType
+    initialValues?: ProductType
 }
 
 const ProductForm = (props: Props) => {
-  const emptyInitialValues: ProductFormType = {
+  const emptyInitialValues: ProductType = {
     title: "",
     description: "",
     link: "",
@@ -29,12 +29,12 @@ const ProductForm = (props: Props) => {
 
     <Formik
       initialValues={props.initialValues ?? emptyInitialValues}
-      validate={(values: ProductFormType) => {
-        const errors: ProductFormType = {}
+      validate={(values: ProductType) => {
+        const errors: ProductType = {}
         //evr but description required
         Object.keys(values).forEach((key) => {
-          if (!values[key as keyof ProductFormType] && key !== "description") {
-            errors[key as keyof ProductFormType] = "Required"
+          if (!values[key as keyof ProductType] && key !== "description") {
+            errors[key as keyof ProductType] = "Required"
           }
         })
         //url
@@ -49,7 +49,7 @@ const ProductForm = (props: Props) => {
         }
         return errors
       }}
-      onSubmit={props.onSubmit}
+      onSubmit={(values)=>props.onSubmit(values)}
     >
       {({
         values,

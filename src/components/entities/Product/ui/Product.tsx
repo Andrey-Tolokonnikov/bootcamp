@@ -7,7 +7,7 @@ type Props = {
 
 const Product = (props: Props) => {
   return (
-    <div className="flex w-full rounded-md p-4 shadow-[0_0px_8px_3px_rgba(34,60,80,0.2)]">
+    <div className="flex w-full rounded-md p-4 shadow-[0_0px_8px_3px_rgba(34,60,80,0.2)] dark:bg-[#222222] dark:shadow-none">
       <img src="icon.png" height={100} width={100} alt=""/>
       <div className="flex flex-col ml-4">
         <Link to={`/product/${props.product.id}`} className="mb-1">

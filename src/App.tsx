@@ -2,9 +2,9 @@ import Header from "@/components/widgets/Header/Header"
 import { ThemeProvider } from "@/components/shared/ThemeProvider"
 import "./App.css"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import ProductsPage from "./components/pages/ProductsPage/ProductsPage"
+import ProductsPage from "./components/pages/ProductsPage/ui/ProductsPage"
 import { Toaster } from "./components/ui/toaster"
-import ProductCard from "./components/pages/ProductCard/ProductCard"
+import ProductCard from "./components/pages/ProductCard/ui/ProductCard"
 
 function App() {
   return (
