@@ -13,16 +13,5 @@ export const groupCategories = (products: ProductType[], categories: Category[])
       ...category,
       products: products.filter((product)=>product.categoryId == category.id)
     }
-  })
+  }).filter(category=>category.products.length > 0)
 }
-
-// export const toFormType = (product: ProductType) : ProductFormType => {
-//   return {
-//     title: product.title,
-//     description: product.description,
-//     link: product.link,
-//     contact: product.contact,
-//     owner: product.owner,
-//     categoryId: product.categoryId.toString()
-//   }
-// }
