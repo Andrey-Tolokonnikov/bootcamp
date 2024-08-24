@@ -29,7 +29,7 @@ const ProductsGroup = (props: Props) => {
 
   return (
     <div>
-      <div className="text-4xl mb-5 text-bold" ref={intersectionRef} id={`category-${props.group.id}`}>{props.group.title}</div>
+      <div className="text-4xl mb-5 text-bold" ref={intersectionRef} id={`category-${props.group.id}`}>{props.group.name}</div>
       <div className="flex flex-col gap-8">
         {props.group.products.map((product) => (
           <Product key={product.id} product={product}/>

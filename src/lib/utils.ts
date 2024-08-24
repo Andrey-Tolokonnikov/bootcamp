@@ -11,7 +11,7 @@ export const groupCategories = (products: ProductType[], categories: Category[])
   return categories.map((category)=>{
     return {
       ...category,
-      products: products.filter((product)=>product.categoryId == category.id)
+      products: products.filter((product)=>product.category_id == category.id)
     }
   }).filter(category=>category.products.length > 0)
 }

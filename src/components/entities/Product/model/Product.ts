@@ -1,14 +1,14 @@
 export type ProductType = {
     id?: string,
-    title?: string,
+    name?: string,
     description?: string,
     link?: string,
     owner?: string,
     contact?: string,
-    categoryId?: string
+    category_id?: string
 }
 export type GroupedProducts = {
-    title: string,
+    name: string,
     id: string,
     products: ProductType[]
 }

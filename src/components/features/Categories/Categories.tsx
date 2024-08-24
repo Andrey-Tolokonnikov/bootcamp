@@ -28,12 +28,12 @@ const Categories = (props: Props) => {
         props.categories.length > 0?(
           props.categories.map((category)=>(
             <div key={category.id} className={cn("inline-flex justify-center items-center rounded-md px-2 py-1 cursor-pointer line-clamp-1 text-ellipsis", activeCategory === category.id ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground")}>
-              <a onClick={()=>scrollToCategory(category.id)}>{category.title}</a>
+              <a onClick={()=>scrollToCategory(category.id)}>{category.name}</a>
             </div>
           )))
           :
           (
-            Array(4).fill(null).map(()=><Skeleton className="inline-block w-16 h-7 rounded-md"/>)
+            Array(4).fill(null).map((_, i)=><Skeleton key={i} className="inline-block w-16 h-7 rounded-md"/>)
           )
       }
     </div>

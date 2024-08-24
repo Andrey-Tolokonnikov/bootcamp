@@ -22,7 +22,6 @@ const ProductsPage = () => {
     fetchCategories(setCategories, toast)
   },
   [setCategories, setProducts, toast])
-
   return (
     <>
       <Container className="sticky top-0 flex justify-between items-center flex-wrap gap-5 bg-white/90 py-4 px-4 rounded-md max-w-[1000px] dark:bg-[#222222]">

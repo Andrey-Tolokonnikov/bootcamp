@@ -15,16 +15,15 @@ type Props = {
 
 const ProductForm = (props: Props) => {
   const emptyInitialValues: ProductType = {
-    title: "",
+    name: "",
     description: "",
     link: "",
     contact: "",
     owner: "",
-    categoryId: ""
+    category_id: ""
   }
 
   const {categories} = useProducts()
-
   return (
 
     <Formik
@@ -64,15 +63,15 @@ const ProductForm = (props: Props) => {
           <div>
             Название
             <Input
-              name="title"
+              name="name"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.title}
-              className={errors.title && touched.title?"border-x-red-400 border-4":""}/>
+              value={values.name}
+              className={errors.name && touched.name?"border-x-red-400 border-4":""}/>
           </div>
 
-          <Select name="categoryId" defaultValue={values.categoryId} onValueChange={(value)=>{
-            setFieldValue("categoryId", value)}}>
+          <Select name="category_id" defaultValue={props.initialValues?.category_id?.toString()} onValueChange={(value)=>{
+            setFieldValue("category_id", value)}}>
             <SelectTrigger className="">
               <SelectValue placeholder="Выберите категорию"/>
             </SelectTrigger>
@@ -80,7 +79,7 @@ const ProductForm = (props: Props) => {
               <SelectGroup>
                 <SelectLabel>Категории</SelectLabel>
                 {categories.map(category=>(
-                  <SelectItem key={category.id} value={category.id.toString()} className="cursor-pointer">{category.title}</SelectItem>
+                  <SelectItem key={category.id} value={category.id.toString()} className="cursor-pointer">{category.name}</SelectItem>
                 ))}
               </SelectGroup>
             </SelectContent>
