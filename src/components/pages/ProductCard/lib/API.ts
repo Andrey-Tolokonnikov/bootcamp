@@ -23,6 +23,6 @@ export function useProduct(id: string, toast: (conf: {[name: string]:string})=>v
         setLoading(false)
       })
   },
-  [])
+  [id, toast])
   return {product, loading}
 }

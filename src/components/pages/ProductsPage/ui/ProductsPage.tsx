@@ -13,6 +13,8 @@ import { fetchCategories, fetchProducts } from "../lib/API"
 const ProductsPage = () => {
   const productsState = useProductsState()
   const {products, categories, setProducts, setCategories} = productsState
+  console.log("cat")
+  console.log(categories)
 
   const groupedProducts: GroupedProducts[] = useMemo(()=>groupCategories(products, categories), [products, categories])
 
