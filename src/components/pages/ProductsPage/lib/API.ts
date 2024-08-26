@@ -20,7 +20,7 @@ function fetchCategories(setCategories: (categories: Category[]) => void, toast:
 }
 
 function fetchProducts(setProducts: (products: ProductType[]) => void, toast: (conf: {[name: string]:string})=>void) {
-  fetch(`${import.meta.env.VITE_API_URL}/products`)
+  fetch(`${import.meta.env.VITE_API_URL}/products/`)
     .then(res=>res.json())
     .then(res=>{setProducts(res)})
     .catch(()=>{
