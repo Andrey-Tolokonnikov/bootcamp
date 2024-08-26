@@ -18,7 +18,7 @@ const ProductForm = (props: Props) => {
     name: "",
     description: "",
     link: "",
-    contact: "",
+    contacts: "",
     owner: "",
     category_id: ""
   }
@@ -43,8 +43,8 @@ const ProductForm = (props: Props) => {
         //mail or phone number
         if(![/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi, 
           /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/]
-          .some((reg=>reg.test(values.contact as string)))){
-          errors.contact = "Invalid contact"
+          .some((reg=>reg.test(values.contacts as string)))){
+          errors.contacts = "Invalid contact"
         }
         return errors
       }}
@@ -99,8 +99,8 @@ const ProductForm = (props: Props) => {
               name="contact"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.contact}
-              className={errors.contact && touched.contact?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
+              value={values.contacts}
+              className={errors.contacts && touched.contacts?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
 
           <div>

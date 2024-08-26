@@ -30,7 +30,7 @@ const ProductInfo = (props: Props) => {
       </div>
       <div><a href={props?.product?.link ?? "#"} className="text-primary flex items-center gap-1"><Link/>{props.product?.link ?? <Skeleton className="h-5 w-72 rounded-md"/>}</a></div>
       <div className="text-slate-700 dark:text-slate-200 flex items-center gap-1"><User className="inline"/>{props.product?.owner ?? <Skeleton className="h-5 w-72 rounded-md"/>}</div>
-      <a href= {`mailto: ${props.product?.contact ?? ""}`} className="flex items-center gap-1"><Milestone />{props.product?.contact ?? <Skeleton className="h-5 w-72 rounded-md"/>}</a>
+      <a href= {`mailto: ${props.product?.contacts ?? ""}`} className="flex items-center gap-1"><Milestone />{props.product?.contacts ?? <Skeleton className="h-5 w-72 rounded-md"/>}</a>
       <Accordion type="single" className="w-[80%]" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Описание</AccordionTrigger>

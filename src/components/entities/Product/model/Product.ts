@@ -4,7 +4,7 @@ export type ProductType = {
     description?: string,
     link?: string,
     owner?: string,
-    contact?: string,
+    contacts?: string,
     category_id?: string
 }
 export type GroupedProducts = {
