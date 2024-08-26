@@ -20,8 +20,8 @@ const ProductsPage = () => {
 
   const {toast} = useToast()
   useEffect(()=>{
-    fetchProducts(setProducts, toast)
-    fetchCategories(setCategories, toast)
+    fetchProducts(setProducts)
+    fetchCategories(setCategories)
   },
   [setCategories, setProducts, toast])
   return (

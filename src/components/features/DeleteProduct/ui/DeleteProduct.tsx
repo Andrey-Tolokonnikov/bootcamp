@@ -19,7 +19,7 @@ const DeleteProduct = (props: Props) => {
       text="Отменить удаление можно будет, лишь связавшись с модератором"
       okText="Удалить"
       onOk={()=>{
-        deleteProduct(props.productId, toast).then(()=>{
+        deleteProduct(props.productId).then(()=>{
           toast(
             {
               title: "Продукт помечен на удаление",

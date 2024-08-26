@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import ProductsPage from "./components/pages/ProductsPage/ui/ProductsPage"
 import { Toaster } from "./components/ui/toaster"
 import ProductCard from "./components/pages/ProductCard/ui/ProductCard"
+import Auth from "./components/pages/Auth/ui/Auth"
+import Registration from "./components/pages/Registration/Registration"
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Routes>
             <Route path="/" Component={ProductsPage}/>
             <Route path="/product/:id" Component={ProductCard}/>
+            <Route path="/auth" Component={Auth}></Route>
+            <Route path="/registration" Component={Registration}></Route>
           </Routes>
           <Toaster/>
         </div>

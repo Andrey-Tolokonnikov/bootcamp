@@ -1,4 +1,6 @@
-export function deleteProduct(productId: string, toast: (conf: {[name: string]:string})=>void){
+import { toast } from "@/components/ui/use-toast"
+
+export function deleteProduct(productId: string){
   return fetch(`${import.meta.env.VITE_API_URL}/products/${productId}`, {
     method: "DELETE"
   })

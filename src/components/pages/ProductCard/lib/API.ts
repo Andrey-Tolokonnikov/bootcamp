@@ -1,7 +1,8 @@
 import { ProductType } from "@/components/entities/Product"
+import { toast } from "@/components/ui/use-toast"
 import { useEffect, useState } from "react"
 
-export function useProduct(id: string, toast: (conf: {[name: string]:string})=>void){
+export function useProduct(id: string){
   const [loading, setLoading] = useState(true)
   
   const [product, setProduct] = useState<ProductType | undefined>(undefined)
@@ -23,6 +24,6 @@ export function useProduct(id: string, toast: (conf: {[name: string]:string})=>v
         setLoading(false)
       })
   },
-  [id, toast])
+  [id])
   return {product, loading}
 }

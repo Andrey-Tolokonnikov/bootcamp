@@ -14,7 +14,7 @@ const AddProduct = () => {
       title="Добавление продукта"
       description="Здесь можно ввести данные нового продукта и отправить их на проверку"
       content={<ProductForm onSubmit={(values)=>{
-        addProduct(values, toast)
+        addProduct(values)
         toast({
           title: "Продукт успешно отправлен",
           description: "После проверки модератором он будет добавлен в каталог."

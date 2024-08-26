@@ -19,7 +19,7 @@ const EditProduct = (props: Props) => {
       title="Редактирование продукта"
       description="Здесь можно изменить данные продукта и отправить их на проверку"
       content={<ProductForm onSubmit={(values)=>{
-        editProduct(values, toast)
+        editProduct(values)
         toast({
           title: "Изменения успешно отправлены",
           description: "После проверки модератором они будут приняты и добавлены в каталог."

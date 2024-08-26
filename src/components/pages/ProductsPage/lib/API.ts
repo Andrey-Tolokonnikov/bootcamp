@@ -1,7 +1,8 @@
 import Category from "@/components/entities/Category/Category"
 import { ProductType } from "@/components/entities/Product"
+import { toast } from "@/components/ui/use-toast"
 
-function fetchCategories(setCategories: (categories: Category[]) => void, toast: (conf: {[name: string]:string})=>void){
+function fetchCategories(setCategories: (categories: Category[]) => void){
   fetch(`${import.meta.env.VITE_API_URL}/categories/`)
     .then(res=>res.json())
     .then(res=>{
@@ -19,7 +20,7 @@ function fetchCategories(setCategories: (categories: Category[]) => void, toast:
     })
 }
 
-function fetchProducts(setProducts: (products: ProductType[]) => void, toast: (conf: {[name: string]:string})=>void) {
+function fetchProducts(setProducts: (products: ProductType[]) => void) {
   fetch(`${import.meta.env.VITE_API_URL}/products/`)
     .then(res=>res.json())
     .then(res=>{setProducts(res)})

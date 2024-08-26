@@ -5,15 +5,13 @@ import Error from "../../ErrorPage/Error"
 
 import { useParams } from "react-router-dom"
 import { useProduct } from "../lib/API"
-import { useToast } from "@/components/ui/use-toast"
 
 const ProductCard = () => {
 
   const params = useParams()
-  const {toast} = useToast()
 
   //const product : ProductType | undefined = useProducts(state=>state.products.find(product=>product.id == params.id))
-  const {product, loading} = useProduct(params.id as string, toast)
+  const {product, loading} = useProduct(params.id as string)
   
   if(!product && !loading){
     return <Error title="Такого продукта не нашлось" text="Возможно, он был удалён"/>
