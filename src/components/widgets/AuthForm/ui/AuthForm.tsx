@@ -42,7 +42,7 @@ const AuthForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.login}
-              className={errors.login && touched.login?"border-x-red-400 border-4":""}/>
+              className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Пароль
@@ -52,7 +52,7 @@ const AuthForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
-              className={errors.password && touched.password?"border-x-red-400 border-4":""}/>
+              className={errors.password && touched.password?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <Button type="submit">Войти</Button>
           <Link to="/registration" className="w-full inline-block"><Button variant={"secondary"} className="w-full">Регистрация</Button></Link>

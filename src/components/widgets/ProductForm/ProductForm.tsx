@@ -67,7 +67,7 @@ const ProductForm = (props: Props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.name}
-              className={errors.name && touched.name?"border-x-red-400 border-4":""}/>
+              className={errors.name && touched.name?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
 
           <Select name="category_id" defaultValue={props.initialValues?.category_id?.toString()} onValueChange={(value)=>{
@@ -91,7 +91,7 @@ const ProductForm = (props: Props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.link}
-              className={errors.link && touched.link?"border-x-red-400 border-4":""}/>
+              className={errors.link && touched.link?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Контакты
@@ -100,7 +100,7 @@ const ProductForm = (props: Props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.contact}
-              className={errors.contact && touched.contact?"border-x-red-400 border-4":""}/>
+              className={errors.contact && touched.contact?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
 
           <div>
@@ -110,7 +110,7 @@ const ProductForm = (props: Props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.owner}
-              className={errors.owner&& touched.owner?"border-x-red-400 border-4":""}/>
+              className={errors.owner&& touched.owner?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
 
           </div>
 
@@ -121,7 +121,7 @@ const ProductForm = (props: Props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.description}
-              className={errors.description && touched.description?"border-x-red-400 border-4":""}/>
+              className={errors.description && touched.description?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
 
           <DialogFooter className="sm:justify-start">

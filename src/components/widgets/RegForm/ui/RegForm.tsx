@@ -50,7 +50,7 @@ const AuthForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.login}
-              className={errors.login && touched.login?"border-x-red-400 border-4":""}/>
+              className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Пароль
@@ -60,7 +60,7 @@ const AuthForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
-              className={errors.password && touched.password?"border-x-red-400 border-4":""}/>
+              className={errors.password && touched.password?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Повторите пароль
@@ -70,7 +70,7 @@ const AuthForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.passwordDbl}
-              className={touched.passwordDbl && errors.passwordDbl?"border-x-red-400 border-4":""}/>
+              className={touched.passwordDbl && errors.passwordDbl?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           {errors.passwordDbl == "Пароли не совпадают" && touched.passwordDbl?<p className="text-red-600">{errors.passwordDbl}</p>:""}
           <Button type="submit">Зарегистироваться</Button>
