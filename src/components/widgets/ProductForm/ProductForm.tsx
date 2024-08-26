@@ -96,7 +96,7 @@ const ProductForm = (props: Props) => {
           <div>
             Контакты
             <Input
-              name="contact"
+              name="contacts"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.contacts}
