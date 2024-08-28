@@ -8,6 +8,7 @@ import ProductCard from "./components/pages/ProductCard/ui/ProductCard"
 import Auth from "./components/pages/Auth/ui/Auth"
 import Registration from "./components/pages/Registration/Registration"
 import Requests from "./components/pages/Requests/ui/Requests"
+import RequestCard from "./components/pages/RequestCard/ui/RequestCard"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/auth" Component={Auth}></Route>
             <Route path="/registration" Component={Registration}/>
             <Route path="/requests" Component={Requests}/>
+            <Route path="/requests/:id" Component={RequestCard}/>
           </Routes>
           <Toaster/>
         </div>

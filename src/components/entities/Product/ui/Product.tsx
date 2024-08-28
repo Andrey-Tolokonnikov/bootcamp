@@ -15,9 +15,7 @@ const Product = (props: Props) => {
         </Link>
         <a href={props.product.link} target="_blank" className="text-sm text-primary mb-1">{props.product.link}</a>
         <p className="text-sm text-gray-600 text-ellipsis line-clamp-2 dark:text-slate-400">{props.product.description}</p>
-      </div>
-      
-      
+      </div>      
     </div>
   )
 }

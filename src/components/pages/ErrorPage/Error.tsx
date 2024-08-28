@@ -1,6 +1,6 @@
 type Props = {
     title: string,
-    text: string
+    text?: string
 }
 
 const Error = (props: Props) => {

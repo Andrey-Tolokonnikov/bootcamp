@@ -8,7 +8,8 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { Link, Milestone, User } from "lucide-react"
 
 type Props = {
-    product: ProductType
+    product: ProductType,
+    showActions: boolean
 }
 
 const ProductInfo = (props: Props) => {
@@ -16,7 +17,7 @@ const ProductInfo = (props: Props) => {
     <div className="flex flex-col gap-3 w-full  lg:max-w-[630px] max-w-[300px]">
       <div className="flex md:justify-between w-full md:flex-row flex-col items-start">
         <h1 className="text-2xl font-bold block">{props.product?.name ?? <Skeleton className="h-7 w-80 rounded-md"/>}</h1>
-        {props.product ? (
+        {props.product && props.showActions? (
           <Popover>
             <PopoverTrigger className=" border-2 rounded-md p-3">Действия</PopoverTrigger>
             <PopoverContent className="flex flex-col gap-1 max-w-[150px]">
@@ -25,8 +26,7 @@ const ProductInfo = (props: Props) => {
               <EditProduct product={props.product}/>
             </PopoverContent>
           </Popover>
-        ): <Skeleton className="h-12 w-32 rounded-md"/>}
-        
+        ): props.showActions? <Skeleton className="h-12 w-32 rounded-md"/>:""}
       </div>
       <div><a href={props?.product?.link ?? "#"} className="text-primary flex items-center gap-1"><Link/>{props.product?.link ?? <Skeleton className="h-5 w-72 rounded-md"/>}</a></div>
       <div className="text-slate-700 dark:text-slate-200 flex items-center gap-1"><User className="inline"/>{props.product?.owner ?? <Skeleton className="h-5 w-72 rounded-md"/>}</div>
