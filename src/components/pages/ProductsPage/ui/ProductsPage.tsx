@@ -8,6 +8,8 @@ import { useEffect, useMemo } from "react"
 import useProductsState from "@/store/ProductsSlice"
 import { useToast } from "@/components/ui/use-toast"
 import { fetchCategories, fetchProducts } from "../lib/API"
+import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
 
 
 const ProductsPage = () => {
@@ -24,11 +26,14 @@ const ProductsPage = () => {
   [setCategories, setProducts, toast])
   return (
     <>
-      <Container className="sticky top-0 flex justify-between items-center flex-wrap gap-5 bg-white/90 py-4 px-4 rounded-md max-w-[1000px] dark:bg-[#222222]">
+      <Container className="sticky top-0 flex justify-between items-center flex-wrap gap-5 bg-white/90 py-4 px-4 rounded-md max-w-[1000px] dark:bg-[#222222] z-30">
         <Categories categories={categories}/>
-        <div className="flex items-center ">
-          <Switch id="archieveSwitch"/>
-          <label htmlFor="archieveSwitch" className="ml-2">Показать архивные</label>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center">
+            <Switch id="archieveSwitch" className="mr-2"/>
+            <label htmlFor="archieveSwitch">Показать архивные</label>
+          </div>
+          <Link to="/requests"><Button variant={"secondary"}>К заявкам</Button></Link>
         </div>
       </Container>
       <Container className="max-w-[1000px]">
