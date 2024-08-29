@@ -12,13 +12,15 @@ const RequestCard = () => {
 
   const {request, loading} = useRequest(params.id as string)
 
-  const [product, setProduct] = useState<ProductType | null>(null)
+  const [product, setProduct] = useState<ProductType | undefined>(undefined)
 
   useEffect(()=>{
 
     const getProduct = async () =>{
-      const product = await fetchProduct(request?.product.id as string)
-      setProduct(product)
+      if(request?.product.id){
+        const product = await fetchProduct(request?.product.id)
+        setProduct(product)
+      } 
     }
     if(request?.type == "edit"){
       getProduct()
@@ -47,7 +49,7 @@ const RequestCard = () => {
           <h1 className="text-2xl font-bold py-4">Заявка №{request?.id}. Редактирование</h1>
           <p className="text-2xl">Было</p>
         </Container>
-        <ProductLayout product={product as ProductType} showActions={false}></ProductLayout>
+        <ProductLayout product={product} showActions={false}></ProductLayout>
         <Container className="max-w-[1000px] py-0">
           <p className="text-2xl">Стало</p>
         </Container>

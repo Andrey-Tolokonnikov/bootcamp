@@ -1,6 +1,6 @@
 import Container from "../../shared/Container"
 import Logo from "@/components/entities/Logo/Logo"
-import Search from "../../features/Search/Search"
+import Search from "../../features/Search/ui/Search"
 import { Link } from "react-router-dom"
 import AddProduct from "@/components/features/AddProduct/ui/AddProduct"
 import { ModeToggle } from "@/components/features/ToggleTheme/ToggleTheme"

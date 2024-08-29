@@ -64,3 +64,13 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #46b2ff;
+  border: 1px solid rgb(0, 94, 255);
+}
