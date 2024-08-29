@@ -1,4 +1,4 @@
-FROM node
+FROM node:18.0.0-alpine
 
 WORKDIR /app
 
@@ -7,7 +7,6 @@ RUN npm i
 
 COPY . .
 
-## EXPOSE [Port you mentioned in the vite.config file]
 
 EXPOSE 5173
 

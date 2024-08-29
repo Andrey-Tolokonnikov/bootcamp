@@ -33,7 +33,8 @@ const ProductForm = (props: Props) => {
         //evr but description required
         Object.keys(values).forEach((key) => {
           if (!values[key as keyof ProductType] && key !== "description") {
-            errors[key as keyof ProductType] = "Required"
+            //errors[key as keyof ProductType] = "Required"
+            errors[key as keyof ProductType] = "required"
           }
         })
         //url
