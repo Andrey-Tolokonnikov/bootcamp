@@ -9,7 +9,8 @@ import useUserState from "@/store/UserSlice"
 
 const AuthForm = () => {
   const emptyInitialValues: User = {
-    login: "",
+    email: "",
+    name: "",
     password: "",
   }
   const {setToken} = useUserState()
@@ -52,11 +53,11 @@ const AuthForm = () => {
           <div>
             Почта
             <Input
-              name="login"
+              name="email"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.login}
-              className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
+              value={values.email}
+              className={errors.email && touched.email?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Пароль

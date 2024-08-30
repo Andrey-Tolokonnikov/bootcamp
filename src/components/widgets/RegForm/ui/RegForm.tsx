@@ -8,7 +8,7 @@ import {RegUser } from "../lib/API"
 
 const RegForm = () => {
   const emptyInitialValues: User = {
-    login: "",
+    email: "",
     name: "",
     password: "",
     passwordDbl: ""
@@ -29,8 +29,8 @@ const RegForm = () => {
         if(values.password!== values.passwordDbl){
           errors.passwordDbl = "Пароли не совпадают"
         }
-        if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi.test(values.login as string)){
-          errors.login = "invalid"
+        if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gi.test(values.email as string)){
+          errors.email = "invalid"
         }
         return errors
       }}
@@ -48,11 +48,11 @@ const RegForm = () => {
           <div>
             Почта
             <Input
-              name="login"
+              name="email"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.login}
-              className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
+              value={values.email}
+              className={errors.email && touched.email?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Имя
@@ -61,7 +61,7 @@ const RegForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.name}
-              className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
+              className={errors.name && touched.name?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
             Пароль

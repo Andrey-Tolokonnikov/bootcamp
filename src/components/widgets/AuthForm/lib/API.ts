@@ -4,7 +4,7 @@ import { toast } from "@/components/ui/use-toast"
 export const AuthUser = (values: User, redirect: (path: string)=>void)=>{
   return fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
     method: "POST",
-    body: JSON.stringify({login: values.login, password: values.password}),
+    body: JSON.stringify({email: values.email, password: values.password}),
     headers: {
       "Content-Type": "application/json"
     }
