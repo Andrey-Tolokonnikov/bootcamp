@@ -2,8 +2,10 @@ import Container from "../../shared/Container"
 import Logo from "@/components/entities/Logo/Logo"
 import Search from "../../features/Search/ui/Search"
 import { Link } from "react-router-dom"
-import AddProduct from "@/components/features/AddProduct/ui/AddProduct"
 import { ModeToggle } from "@/components/features/ToggleTheme/ToggleTheme"
+import { Button } from "@/components/ui/button"
+import { User } from "lucide-react"
+import AddProduct from "@/components/features/AddProduct/ui/AddProduct"
 
 const Header = () => {
   return (
@@ -15,6 +17,9 @@ const Header = () => {
           </Link>
           <Search/>
           <div className="flex items-center gap-2">
+            {/* <Link to="/auth">
+              <Button><User className="mr-2"/>Войти</Button>
+            </Link> */}
             <AddProduct/>
             <ModeToggle></ModeToggle>
           </div>

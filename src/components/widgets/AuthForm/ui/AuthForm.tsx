@@ -3,12 +3,25 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Formik} from "formik"
 import { AuthUser } from "../lib/API"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import useUserState from "@/store/UserSlice"
+
 
 const AuthForm = () => {
   const emptyInitialValues: User = {
     login: "",
     password: "",
+  }
+  const {setToken} = useUserState()
+
+  const navigate = useNavigate()
+
+  const setUser = (user: User) => {
+    const fetchUser = async () => {
+      const userData = await AuthUser(user, navigate)
+      //setToken(userData.token)
+    }
+    fetchUser()
   }
 
   return (
@@ -24,7 +37,8 @@ const AuthForm = () => {
         })
         return errors
       }}
-      onSubmit={AuthUser}
+      //onSubmit={(values)=>{AuthUser(values, navigate)}}
+      onSubmit={setUser}
     >
       {({
         values,

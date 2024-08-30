@@ -31,10 +31,10 @@ const ProductForm = (props: Props) => {
       validate={(values: ProductType) => {
         const errors: ProductType = {}
         //evr but description required
-        Object.keys(values).forEach((key) => {
+        Object.keys(errors).forEach((key) => {
+          console.log(key)
           if (!values[key as keyof ProductType] && key !== "description") {
-            //errors[key as keyof ProductType] = "Required"
-            errors[key as keyof ProductType] = "required"
+            errors[key as keyof ProductType] = "Required"
           }
         })
         //url
@@ -112,9 +112,7 @@ const ProductForm = (props: Props) => {
               onBlur={handleBlur}
               value={values.owner}
               className={errors.owner&& touched.owner?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
-
           </div>
-
           <div>
             Описание
             <Input
@@ -124,7 +122,6 @@ const ProductForm = (props: Props) => {
               value={values.description}
               className={errors.description && touched.description?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
-
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
               <Button type="button" variant="secondary">

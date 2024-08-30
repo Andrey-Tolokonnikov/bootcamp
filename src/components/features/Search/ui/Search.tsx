@@ -20,7 +20,6 @@ const Search = () => {
     }
     getItems()
   }, 300, [searchText])
-  console.log(searchItems)
 
   const onBlurDelayed = ()=>{
     setTimeout(()=>{setIsFocused(false)}, 50)
@@ -41,7 +40,7 @@ const Search = () => {
         
         <div className={cn("scroll absolute w-full bg-white rounded-xl top-14 shadow-md transition-all duration-300 invisible opacity-0 z-50", isFocused && "visible opacity-100 top-12")}>
           {(searchItems && searchItems.length > 0 ?searchItems?.slice(0, 7).map(item=>(
-            <Link to={`/product/${item.id}`}>
+            <Link to={`/product/${item.id}`} key={item.id}>
               <div className="flex group gap-2 px-2 items-center justify-between hover:bg-blue-200 transition-colors p-2 rounded-xl" key={item.id}>
                 <div className="flex gap-2">
                   <img src="/icon.png" className="w-[20px] h-[20px]" alt="" />

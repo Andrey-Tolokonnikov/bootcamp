@@ -12,7 +12,7 @@ const Product = (props: Props) => {
       <img src="icon.png" height={100} width={100} alt=""/>
       <div className="flex flex-col ml-4">
         <Link to={`/product/${props.product.id}`} className="mb-1">
-          <p className="text-xl font-bold">{props.product.name}{props.product.archieved}</p>
+          <p className="text-xl font-bold">{props.product.name}</p>
         </Link>
         <a href={props.product.link} target="_blank" className="text-sm text-primary mb-1">{props.product.link}</a>
         <p className="text-sm text-gray-600 text-ellipsis line-clamp-2 dark:text-slate-400">{props.product.description}</p>

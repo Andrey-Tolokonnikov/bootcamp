@@ -3,18 +3,19 @@ import { User } from "@/components/entities/User/model/User"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Formik} from "formik"
-import { Link } from "react-router-dom"
-import { RegUser } from "../lib/API"
+import { Link, useNavigate } from "react-router-dom"
+import {RegUser } from "../lib/API"
 
-const AuthForm = () => {
+const RegForm = () => {
   const emptyInitialValues: User = {
     login: "",
     password: "",
     passwordDbl: ""
   }
 
-  return (
+  const navigate = useNavigate()
 
+  return (
     <Formik
       initialValues={emptyInitialValues}
       validate={(values: User) => {
@@ -32,7 +33,7 @@ const AuthForm = () => {
         }
         return errors
       }}
-      onSubmit={RegUser}
+      onSubmit={(values)=>RegUser(values, navigate)}
     >
       {({
         values,
@@ -81,4 +82,4 @@ const AuthForm = () => {
   )
 }
 
-export default AuthForm
+export default RegForm
