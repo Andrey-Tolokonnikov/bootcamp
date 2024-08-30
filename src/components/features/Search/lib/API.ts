@@ -1,7 +1,7 @@
 import { toast } from "@/components/ui/use-toast"
 
 function fetchSearchItems(name: string){
-  return fetch(`${import.meta.env.VITE_API_URL}/products/productName/?name=${encodeURIComponent(name)}`)
+  return fetch(`${import.meta.env.VITE_API_URL}/products/productName?name=${encodeURIComponent(name)}`)
     .then(res=>res.json())
     .catch(()=>{
       toast({

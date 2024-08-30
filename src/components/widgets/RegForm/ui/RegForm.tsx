@@ -9,6 +9,7 @@ import {RegUser } from "../lib/API"
 const RegForm = () => {
   const emptyInitialValues: User = {
     login: "",
+    name: "",
     password: "",
     passwordDbl: ""
   }
@@ -43,7 +44,7 @@ const RegForm = () => {
         handleBlur,
         handleSubmit
       }) => (
-        <form onSubmit={handleSubmit} className="flex flex-col w-full gap-5">
+        <form onSubmit={handleSubmit} className="flex flex-col w-full gap-2">
           <div>
             Почта
             <Input
@@ -51,6 +52,15 @@ const RegForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.login}
+              className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
+          </div>
+          <div>
+            Имя
+            <Input
+              name="name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.name}
               className={errors.login && touched.login?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
           <div>
