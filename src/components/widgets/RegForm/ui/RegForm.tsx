@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input"
 import { Formik} from "formik"
 import { Link, useNavigate } from "react-router-dom"
 import {RegUser } from "../lib/API"
+import { toast } from "@/components/ui/use-toast"
+
 
 const RegForm = () => {
   const emptyInitialValues: User = {
@@ -15,6 +17,19 @@ const RegForm = () => {
   }
 
   const navigate = useNavigate()
+  const registrateUser = (user: User) =>{
+    RegUser(user)
+      .then(()=>navigate("/auth"))
+      .then(()=>{toast({
+        title: "Регистрация прошла успешно"
+      })})
+      .catch(()=>{
+        toast({
+          title: "Пользователь с такими данными уже существует",
+          variant: "destructive"
+        })
+      })
+  }
 
   return (
     <Formik
@@ -34,7 +49,7 @@ const RegForm = () => {
         }
         return errors
       }}
-      onSubmit={(values)=>RegUser(values, navigate)}
+      onSubmit={registrateUser}
     >
       {({
         values,
