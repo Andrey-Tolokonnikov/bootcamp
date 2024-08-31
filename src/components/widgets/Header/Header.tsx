@@ -23,7 +23,7 @@ const Header = () => {
                 {
                   user.name?(
                     <div> 
-                      <p>{user.name}</p>
+                      <p className="">{user.name}</p>
                       <p className="text-xs">Выйти</p>
                     </div>):"Войти"
                 }

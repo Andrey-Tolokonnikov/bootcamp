@@ -31,7 +31,7 @@ const ProductForm = (props: Props) => {
       validate={(values: ProductType) => {
         const errors: ProductType = {}
         //evr but description required
-        Object.keys(errors).forEach((key) => {
+        Object.keys(values).forEach((key) => {
           console.log(key)
           if (!values[key as keyof ProductType] && key !== "description") {
             errors[key as keyof ProductType] = "Required"

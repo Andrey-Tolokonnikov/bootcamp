@@ -17,7 +17,10 @@ const useUserState = create<User>((set) => ({
 
   //функционал для пользователя
   //role: "ROLE_USER",
-  
+
+  //функционал для неавторизованного пользователя
+  //role: "",
+
   token: "",
   setName: (name: string) => set({ name }),
   setRole: (role: "ROLE_USER" | "ROLE_MODER") => set({ role }),

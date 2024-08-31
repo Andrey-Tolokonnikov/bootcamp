@@ -17,7 +17,6 @@ const Product = (props: Props) => {
         <a href={props.product.link} target="_blank" className="text-sm text-primary mb-1">{props.product.link}</a>
         <p className="text-sm text-gray-600 text-ellipsis line-clamp-2 dark:text-slate-400">{props.product.description}</p>
       </div>
-      {/* <div className={cn("w-full h-full absolute top-0 left-0 bg-amber-200 opacity-0", props.product.archieved && "opacity-30")}></div>       */}
     </div>
   )
 }
