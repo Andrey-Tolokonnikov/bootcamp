@@ -98,6 +98,7 @@ const RegForm = () => {
               value={values.passwordDbl}
               className={touched.passwordDbl && errors.passwordDbl?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
+          
           {errors.passwordDbl == "Пароли не совпадают" && touched.passwordDbl?<p className="text-red-600">{errors.passwordDbl}</p>:""}
           <Button type="submit">Зарегистироваться</Button>
           <Link to="/auth" className="w-full inline-block"><Button variant={"secondary"} className="w-full">Авторизация</Button></Link>

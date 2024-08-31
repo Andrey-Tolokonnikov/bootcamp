@@ -17,10 +17,10 @@ const Header = () => {
           </Link>
           <Search/>
           <div className="flex items-center gap-2">
-            {/* <Link to="/auth">
+            <Link to="/auth">
               <Button><User className="mr-2"/>Войти</Button>
-            </Link> */}
-            <AddProduct/>
+            </Link>
+            {/* <AddProduct/> */}
             <ModeToggle></ModeToggle>
           </div>
         </div>
