@@ -5,9 +5,10 @@ import { Link } from "react-router-dom"
 import { ModeToggle } from "@/components/features/ToggleTheme/ToggleTheme"
 import { Button } from "@/components/ui/button"
 import { User } from "lucide-react"
-import AddProduct from "@/components/features/AddProduct/ui/AddProduct"
+import useUserState from "@/store/UserSlice"
 
 const Header = () => {
+  const user = useUserState()
   return (
     <header className="border-y dark:border-y-gray-600 dark:bg-[#222222]">
       <Container>
@@ -18,9 +19,16 @@ const Header = () => {
           <Search/>
           <div className="flex items-center gap-2">
             <Link to="/auth">
-              <Button><User className="mr-2"/>Войти</Button>
+              <Button><User className="mr-2"/>
+                {
+                  user.name?(
+                    <div> 
+                      <p>{user.name}</p>
+                      <p className="text-xs">Выйти</p>
+                    </div>):"Войти"
+                }
+              </Button>
             </Link>
-            {/* <AddProduct/> */}
             <ModeToggle></ModeToggle>
           </div>
         </div>

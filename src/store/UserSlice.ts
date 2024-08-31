@@ -10,8 +10,14 @@ interface User {
 }
 
 const useUserState = create<User>((set) => ({
-  name: "",
-  role: "",
+  name: "John",
+
+  //функционал для модератора
+  role: "ROLE_MODER",
+
+  //функционал для пользователя
+  //role: "ROLE_USER",
+  
   token: "",
   setName: (name: string) => set({ name }),
   setRole: (role: "ROLE_USER" | "ROLE_MODER") => set({ role }),

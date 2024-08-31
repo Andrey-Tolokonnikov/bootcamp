@@ -6,6 +6,7 @@ import { Formik} from "formik"
 import { Link, useNavigate } from "react-router-dom"
 import {RegUser } from "../lib/API"
 import { toast } from "@/components/ui/use-toast"
+import { Checkbox } from "@/components/ui/checkbox"
 
 
 const RegForm = () => {
@@ -30,8 +31,8 @@ const RegForm = () => {
         })
       })
   }
-
   return (
+    
     <Formik
       initialValues={emptyInitialValues}
       validate={(values: User) => {
@@ -98,9 +99,14 @@ const RegForm = () => {
               value={values.passwordDbl}
               className={touched.passwordDbl && errors.passwordDbl?"border-x-red-400 border-4 dark:border-x-red-400":""}/>
           </div>
-          
+          <div>
+            <Checkbox required id="terms" className="mr-2"/><label
+              htmlFor="terms"
+              className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >Регистрируясь на данной платформе, я подтверждаю своё согласие на <a href="/agreement.txt" className="underline" download>обработку персональных данных</a></label>
+          </div>
           {errors.passwordDbl == "Пароли не совпадают" && touched.passwordDbl?<p className="text-red-600">{errors.passwordDbl}</p>:""}
-          <Button type="submit">Зарегистироваться</Button>
+          <Button type="submit" disabled={Object.values(errors).some(val=>val)}>Зарегистироваться</Button>
           <Link to="/auth" className="w-full inline-block"><Button variant={"secondary"} className="w-full">Авторизация</Button></Link>
         </form>
       )}

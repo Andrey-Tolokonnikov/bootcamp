@@ -10,6 +10,8 @@ import { useToast } from "@/components/ui/use-toast"
 import { fetchCategories, fetchProducts } from "../lib/API"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
+import AddProduct from "@/components/features/AddProduct/ui/AddProduct"
+import useUserState from "@/store/UserSlice"
 
 
 const ProductsPage = () => {
@@ -18,6 +20,7 @@ const ProductsPage = () => {
 
   const groupedProducts: GroupedProducts[] = useMemo(()=>groupCategories(products, categories), [products, categories])
 
+  const user = useUserState()
   const {toast} = useToast()
   useEffect(()=>{
     fetchProducts(setProducts)
@@ -28,12 +31,13 @@ const ProductsPage = () => {
     <>
       <Container className="sticky top-0 flex justify-between items-center flex-wrap gap-5 bg-white/90 py-4 px-4 rounded-md max-w-[1000px] dark:bg-[#222222] z-30">
         <Categories categories={categories}/>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <div className="flex items-center">
             <Switch id="archieveSwitch" className="mr-2"/>
             <label htmlFor="archieveSwitch">Показать архивные</label>
           </div>
-          <Link to="/requests"><Button variant={"secondary"}>К заявкам</Button></Link>
+          {user.role == "ROLE_MODER" && <Link to="/requests"><Button variant={"secondary"}>К заявкам</Button></Link>}
+          {user.role && <AddProduct/>}
         </div>
       </Container>
       <Container className="max-w-[1000px]">
